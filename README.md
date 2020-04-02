@@ -1,4 +1,4 @@
-# Cache
+# Django QuerySet Caching with uWSGI
 
 A demo [Django](https://www.djangoproject.com) application that uses
 [uWSGI caches](https://uwsgi-docs.readthedocs.io/en/latest/Caching.html) to cache
