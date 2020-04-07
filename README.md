@@ -15,7 +15,7 @@ $ python manage.py migrate
 ## Run using uWSGI 
 
 ```shell script
-$ uwsgi --http :8000 --module server.wsgi
+$ uwsgi --cache2 name=qsets,items=100  --http :8000 --module server.wsgi
 *** Starting uWSGI 2.0.18 (64bit) on [Mon Apr  6 19:01:28 2020] ***
 ...
 uWSGI http bound on :8000 fd 4
