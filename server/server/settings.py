@@ -137,5 +137,6 @@ LOGGING = {
 CACHES = {
     'default': {
         'BACKEND': 'uwsgicache.UWSGICache',
+        'LOCATION': 'qsets'
     }
 }
