@@ -1,6 +1,7 @@
 # Django QuerySet Caching with uWSGI
 
 > Work in progress with a very basic version ...
+> Works with LocMemCache and not yet with UWSGIC !
 
 ## Quick Start
 
@@ -29,6 +30,8 @@ $ curl  http://127.0.0.1:8000/
 ```
 
 Check server logs
+
+> Not yet working as expected with uWSGI
 
 ```shell script
 $ uwsgi --http :8000 --module server.wsgi
@@ -64,6 +67,8 @@ Cache invalidate 1
 ## Run without uWSGI
 
 By default Django uses the built in LocMemCache when not running with uWSGI.
+
+>  Works as expected with default LocMemCache
 
 ```shell script
 $ python manage.py runserver
