@@ -22,11 +22,18 @@ uWSGI http bound on :8000 fd 4
 ...
 ```
 
+Trigger test
+
 ```shell script
 $ curl  http://127.0.0.1:8000/
 ```
 
+Check server logs
+
 ```shell script
+$ uwsgi --http :8000 --module server.wsgi
+...
+...
 Using cache type <uwsgicache.UWSGICache object at 0x10e7dda50>
 Creating a user ...
 Cache invalidate 1
