@@ -18,9 +18,6 @@ $ python manage.py migrate
 $ uwsgi --http :8000 --module server.wsgi
 *** Starting uWSGI 2.0.18 (64bit) on [Mon Apr  6 19:01:28 2020] ***
 ...
-
-Starting development server at http://127.0.0.1:8000/
-...
 uWSGI http bound on :8000 fd 4
 ...
 ```
