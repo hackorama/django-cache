@@ -123,5 +123,9 @@ cache.delete(id)
 
 ## TODO
 
+- Use model name and primary key as the cache key to support multiple models
+  - Ex: `get('user', <id>)` instead of `get_user(<id>)`
+  - Keys will be namespace prefixed `<model_name>.<id>`
+- Explore extending `django.db.models.Model` as `CachedModel` adding get/set/delete methods with cache support
 - Look at [Model Signals](https://docs.djangoproject.com/en/3.0/ref/signals/) for invalidating cache for writes.
-- Set TTL for cache objects ?
+- Verify TTL timeout eviction of cache objects
