@@ -102,6 +102,7 @@ $ vi server/settings.py
 CACHES = { 
     'default': {
         'BACKEND': 'uwsgicache.UWSGICache',
+        'LOCATION': 'qsets'
     }   
 }  
 ...
