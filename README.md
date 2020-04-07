@@ -1,8 +1,6 @@
 # Django QuerySet Caching with uWSGI
 
 > Work in progress with a very basic version ...
->
-> Works with LocMemCache and not yet with uWSGI
 
 ## Quick Start
 
@@ -35,7 +33,7 @@ Check server logs
 > Not yet working as expected with uWSGI
 
 ```shell script
-$ uwsgi --http :8000 --module server.wsgi
+$ uwsgi --cache2 name=qsets,items=100  --http :8000 --module server.wsgi
 ...
 ...
 Using cache type <uwsgicache.UWSGICache object at 0x10e7dda50>
@@ -46,8 +44,7 @@ Cache miss 1
 Cache add 1
 <QuerySet [<User: foo>]>
 Second get of user
-Cache miss 1
-Cache add 1
+Cache hit 1
 <QuerySet [<User: foo>]>
 Updating user name ...
 Cache invalidate 1
@@ -56,20 +53,15 @@ Cache miss 1
 Cache add 1
 <QuerySet [<User: bar>]>
 Next get of updated user
-Cache miss 1
-Cache add 1
+Cache hit 1
 <QuerySet [<User: bar>]>
 Deleting user ...
 Cache invalidate 1
-
-
 ```
 
 ## Run without uWSGI
 
 By default Django uses the built in LocMemCache when not running with uWSGI.
-
->  Works as expected with default LocMemCache
 
 ```shell script
 $ python manage.py runserver
