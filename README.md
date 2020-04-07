@@ -1,7 +1,8 @@
 # Django QuerySet Caching with uWSGI
 
 > Work in progress with a very basic version ...
-> Works with LocMemCache and not yet with UWSGIC !
+>
+> Works with LocMemCache and not yet with uWSGI
 
 ## Quick Start
 
