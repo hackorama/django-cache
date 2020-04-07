@@ -30,8 +30,6 @@ $ curl  http://127.0.0.1:8000/
 
 Check server logs
 
-> Not yet working as expected with uWSGI
-
 ```shell script
 $ uwsgi --cache2 name=qsets,items=100  --http :8000 --module server.wsgi
 ...
