@@ -45,7 +45,7 @@ def get_user(id):
             logger.info("  CACHE POPULATE key=%s", id)
             cache.set(id, user)  # Add to cache
     else:
-        logger.info("  Cache HIT key=%s", id)
+        logger.info("  CACHE HIT key=%s", id)
     return user
 
 
