@@ -25,3 +25,14 @@ class Team(CacheableModel):
 
     def __str__(self):
         return "Team id={} mame={}".format(self.id, self.name)
+
+
+class TeamStat(models.Model):
+    """
+    This is a model using CachingModel a caching version of models.Model
+    """
+    name = models.CharField(max_length=200)
+    score = models.IntegerField()
+
+    def __str__(self):
+        return "Team id={} mame={} scoer={}".format(id, self.name, self.score)

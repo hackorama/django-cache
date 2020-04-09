@@ -2,6 +2,8 @@
 
 > Work in progress ...
 
+> **WHATS NEW** - Added new [caching tests](tests.md)
+
 Three versions implemented.
 
 **1. [Simple Caching](server/qsets/simple_caching.py) for a specific model only**
@@ -114,7 +116,8 @@ Got None
 
 ## Run without uWSGI
 
-By default Django uses the built in LocMemCache when not running with uWSGI.
+By default Django uses the built in `LocMemCache` when not running with uWSGI and the caching code will automatically
+works with `LocMemCache` (or any other cache backends).
 
 ```shell script
 $ python manage.py runserver
