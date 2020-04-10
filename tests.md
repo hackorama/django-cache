@@ -33,28 +33,33 @@ Creating test database for alias 'default'...
 ...
 Using cache LocMemCache
 ...
-For first top team stats fetch, expects cache miss
+For first top 3 team stats fetch, expects cache miss
+Getting top 3 team stats
   CACHE MISS
   CACHE POPULATE
 (1) Alpha 50 == 50
 (2) Beta 40 == 40
 (4) Delta 30 == 30
-For repeated same fetch count, expects cache hit
+For repeated same etch count of 3, expects cache hit
+Getting top 3 team stats
   CACHE HIT
 (1) Alpha 50 == 50
 (2) Beta 40 == 40
 (4) Delta 30 == 30
 
-Changing top team stats fetch count to lower count, expects cache hit
+Changing top team stats fetch count to lower count of 2, expects cache hit
+Getting top 2 team stats
   CACHE HIT FOR SUBSET [IN CACHE 3, REQUESTED 2]
 (1) Alpha 50 == 50
 (2) Beta 40 == 40
-For same top teams fetch count, expects cache hit
+For same top teams fetch count of 2, expects cache hit
+Getting top 2 team stats
   CACHE HIT FOR SUBSET [IN CACHE 3, REQUESTED 2]
 (1) Alpha 50 == 50
 (2) Beta 40 == 40
 
-Changing top teams fetch count to higher count, expects cache invalidation
+Changing top teams fetch count to higher count of 4, expects cache invalidation
+Getting top 4 team stats
   CACHE MISS [IN CACHE 3, REQUESTED 4]
   CACHE INVALIDATE
   CACHE POPULATE
@@ -62,35 +67,39 @@ Changing top teams fetch count to higher count, expects cache invalidation
 (2) Beta 40 == 40
 (4) Delta 30 == 30
 (5) Epsilon 20 == 20
-
-For same top teams fetch count, expects cache hit
+For same top teams fetch count of 4, expects cache hit
+Getting top 4 team stats
   CACHE HIT
 (1) Alpha 50 == 50
 (2) Beta 40 == 40
 (4) Delta 30 == 30
 (5) Epsilon 20 == 20
 
-Adding a new team stat, expects cache invalidation
+Adding a new team stat and fetching 3, expects cache invalidation
   CACHE INVALIDATE
+Getting top 3 team stats
   CACHE MISS
   CACHE POPULATE
 (6) Zeta 60 == 60
 (1) Alpha 50 == 50
 (2) Beta 40 == 40
-For repeated same fetch count, expects cache hit
+For repeated same fetch count of 3, expects cache hit
+Getting top 3 team stats
   CACHE HIT
 (6) Zeta 60 == 60
 (1) Alpha 50 == 50
 (2) Beta 40 == 40
 
-Removing a team stat, expects cache invalidation
+Removing a team stat and fetching 3, expects cache invalidation
   CACHE INVALIDATE
+Getting top 3 team stats
   CACHE MISS
   CACHE POPULATE
 (6) Zeta 60 == 60
 (2) Beta 40 == 40
 (4) Delta 30 == 30
-For repeated same fetch count, expects cache hit
+For repeated same fetch count of 3, expects cache hit
+Getting top 3 team stats
   CACHE HIT
 (6) Zeta 60 == 60
 (2) Beta 40 == 40

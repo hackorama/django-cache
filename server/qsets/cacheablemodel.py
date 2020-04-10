@@ -18,7 +18,6 @@ class CacheableModel(models.Model):
         return "{}.{}".format(self.__class__.__name__, id)
 
     def get(self, id):
-
         """
         Get a model object from the cache.
         If the object is not in cache gets it from the database and also populates it in the cache.
@@ -57,7 +56,6 @@ class CacheableModel(models.Model):
         """
         Removes model object from the database and invalidates any cached version.
 
-        :param model_class: the model class
         :param id: the primary key of the model
         :return: None
         """
