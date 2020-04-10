@@ -1,10 +1,12 @@
 # Django QuerySet Caching with uWSGI
 
-> Work in progress ...
+> **WHAT'S NEW** - Added new [queryset caching example and tests](tests.md)
 
-> **WHATS NEW** - Added new [caching tests](tests.md)
+### An example of caching a set of models from an expensive query lookup
 
-Three versions implemented.
+Please see [the implementation and tests](tests.md)
+
+### Examples for caching query lookup for single model instances
 
 **1. [Simple Caching](server/qsets/simple_caching.py) for a specific model only**
 
