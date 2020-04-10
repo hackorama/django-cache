@@ -1,9 +1,8 @@
-# Tests
+# QuerySet Caching Tests
 
+An example of caching a set of models from an expensive query lookup by caching the QuerySet.
 
-## Added [TeamStats](server/qsets/team_stats.py) 
-
-Get the top team stats of given count by team score with QuerySet caching
+Added [TeamStats](server/qsets/team_stats.py) that implements top n `TeamStat` lookup.
 
 - QuerySet is cached as a list of models
 - Invalidation is based on change in model item count
@@ -18,8 +17,8 @@ Get the top team stats of given count by team score with QuerySet caching
 > [Model Signals](https://docs.djangoproject.com/en/3.0/ref/signals/) could potentially be leveraged to
 > invalidate the cache behind the scenes for updates
 
-## Added [CacheTest](server/qsets/tests.py)
 
+Tested with new [CacheTest](server/qsets/tests.py)
 
 ```
 $ python -m pip install -r requirements.txt
